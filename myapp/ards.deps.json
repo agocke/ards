@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ards/1.0.0": {
+        "dependencies": {
+          "serde-dn": "0.2.2"
+        },
+        "runtime": {
+          "ards.dll": {}
+        }
+      },
+      "serde-dn/0.2.2": {
+        "runtime": {
+          "lib/net6.0/SerdeDn.dll": {
+            "assemblyVersion": "0.2.2.0",
+            "fileVersion": "0.2.2.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ards/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "serde-dn/0.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O8fBldzLEEfO4Zqwlt2yBec6WY6BbNCC/UmZuxZfNVFXVBhTGq6iQiYaW+bCetyDiUb8Im/ATrTqxAmW2GJhTQ==",
+      "path": "serde-dn/0.2.2",
+      "hashPath": "serde-dn.0.2.2.nupkg.sha512"
+    }
+  }
+}
