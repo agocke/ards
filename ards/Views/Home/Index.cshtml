@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @ViewData["Str"]
+
+    <table style="margin-left: auto; margin-right: auto;">
+        <tr>
+            <th>Build Number</th>
+            <th>Commit</th>
+            <th>Status</th>
+            <th>Result</th>
+        </tr>
+        @foreach (var item in (List<BuildResponse>)ViewData["Builds"]!)
+        {
+            <tr>
+                <td><a href="@item.GetBuildLink()">@item.BuildNumber</a></td>
+                <td>@item.SourceVersion</td>
+                <td>@item.Status</td>
+                <td>@item.Result</td>
+            </tr>
+        }
+    </table>
+</div>
