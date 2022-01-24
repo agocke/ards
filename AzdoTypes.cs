@@ -10,7 +10,7 @@ namespace Ards
         public int Id { get; init; }
     }
 
-    [GenerateSerde]
+    [GenerateDeserialize]
     [SerdeTypeOptions(MemberFormat = MemberFormat.CamelCase)]
     public readonly partial record struct BuildListResponse
     {
