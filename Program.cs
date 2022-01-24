@@ -18,8 +18,6 @@ var secretClientOptions = new SecretClientOptions()
 
 var client = new SecretClient(new Uri("https://ards.vault.azure.net"), new DefaultAzureCredential(), secretClientOptions);
 
-SecretHolder.AzdoSecret = await client.GetSecretAsync("azdo-oath");
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
