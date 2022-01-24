@@ -19,6 +19,11 @@
                 <td>@item.SourceVersion</td>
                 <td>@item.Status</td>
                 <td>@item.Result</td>
+                <td>
+                    <form action="javascript:void(0);" method="POST" onsubmit="requeue(@item.BuildNumber)">
+                        <input type="submit" value="Requeue" />
+                    </form>
+                </td>
             </tr>
         }
     </table>

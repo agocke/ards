@@ -24,12 +24,17 @@ public class HomeController : Controller
         const string branchName = "refs/heads/main";
         const string buildId = "686";
         const int maxBuilds = 10;
-        var str = $"https://dev.azure.com/{organization}/{project}/_apis/build/builds?definitions={buildId}&maxBuildsPerDefinition={maxBuilds}&branchName={branchName}&api-version=6.0";
+        var str = $"https://dev.azure.com/{organization}/{project}/_apis/build/builds?definitions={buildId}&maxBuildsPerDefinition={maxBuilds}&branchName={branchName}&queryOrder=queueTimeDescending&api-version=6.0";
         var result = await _http.GetStringAsync(str);
         var pipelineResult = JsonSerializer.Deserialize<BuildListResponse>(result);
         //ViewData["Str"] = result;
         ViewData["Builds"] = pipelineResult.Value;
         return View();
+    }
+
+    public IActionResult Requeue(string buildId)
+    {
+        return View("hello");
     }
 
     private static List<T> JsonDeserializeList<T>(string src)

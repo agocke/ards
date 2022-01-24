@@ -4,14 +4,14 @@ using Serde;
 namespace Ards
 {
     [GenerateSerde]
-    [SerdeOptions(MemberFormat = MemberFormat.CamelCase)]
+    [SerdeTypeOptions(MemberFormat = MemberFormat.CamelCase)]
     public readonly partial record struct PipelineGetResult
     {
         public int Id { get; init; }
     }
 
     [GenerateSerde]
-    [SerdeOptions(MemberFormat = MemberFormat.CamelCase)]
+    [SerdeTypeOptions(MemberFormat = MemberFormat.CamelCase)]
     public readonly partial record struct BuildListResponse
     {
         public int Count { get; init; }
@@ -19,13 +19,14 @@ namespace Ards
     }
 
     [GenerateSerde]
-    [SerdeOptions(MemberFormat = MemberFormat.CamelCase)]
+    [SerdeTypeOptions(MemberFormat = MemberFormat.CamelCase)]
     public readonly partial record struct BuildResponse
     {
         public int Id { get; init; }
         public string BuildNumber { get; init; }
         public string Status { get; init; }
-        public string Result { get; init; }
+        [SerdeMemberOptions(NullIfMissing = true)]
+        public string? Result { get; init; }
         public string SourceVersion { get; init; }
 
         public string GetBuildLink() =>
